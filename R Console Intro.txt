@@ -1,0 +1,1363 @@
+
+R version 3.6.1 (2019-07-05) -- "Action of the Toes"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.70 (7684) x86_64-apple-darwin15.6.0]
+
+[History restored from /Users/Jen 1/.Rapp.history]
+
+> 6
+[1] 6
+> 6_3
+Error: unexpected input in "6_"
+> 6+3
+[1] 9
+> 6/3
+[1] 2
+> 6*3
+[1] 18
+> 6^3
+[1] 216
+> 6; 6+3; 6/3; 6*3; 6^3
+[1] 6
+[1] 9
+[1] 2
+[1] 18
+[1] 216
+> a<-6
+> a
+[1] 6
+> b<-3
+> a+b; a/b;a^3
+[1] 9
+[1] 2
+[1] 216
+> a<-c(6,1,4,2)
+> a
+[1] 6 1 4 2
+> a[1]
+[1] 6
+> a[2]
+[1] 1
+> x<-2:4
+> x
+[1] 2 3 4
+> a[2:3]
+[1] 1 4
+> a[x]
+[1] 1 4 2
+> a[c(1,2)]
+[1] 6 1
+> a[-c(1,3)]
+[1] 1 2
+> a[-2]
+[1] 6 4 2
+> b<-c(-1,5,pi,0)
+> b
+[1] -1.000000  5.000000  3.141593  0.000000
+> a+b
+[1] 5.000000 6.000000 7.141593 2.000000
+> a^3
+[1] 216   1  64   8
+> product <- a*b
+> product
+[1] -6.00000  5.00000 12.56637  0.00000
+> power<-a^b
+> power
+[1]  0.1666667  1.0000000 77.8802336  1.0000000
+> c(12, 13, 79, 81, 85)
+[1] 12 13 79 81 85
+> jen<-c(12, 13, 79, 81,84)
+> jen
+[1] 12 13 79 81 84
+> wolf<-c(4,9,74,84,200)
+> wolf
+[1]   4   9  74  84 200
+> wolf+jen
+[1]  16  22 153 165 284
+> power jen
+Error: unexpected symbol in "power jen"
+> power
+[1]  0.1666667  1.0000000 77.8802336  1.0000000
+> wolf<-c(4,9,74,84)
+> wolf
+[1]  4  9 74 84
+> wolf+jen
+[1]  16  22 153 165  88
+Warning message:
+In wolf + jen :
+  longer object length is not a multiple of shorter object length
+> aa<-c(1,2,4,7,10)
+> sum(aa)
+[1] 24
+> length(aa)
+[1] 5
+> m<-sum(aa)/length(aa)
+> m
+[1] 4.8
+> my.mean<-function(x){mn<-sum(x)/length(x); return(mn)}
+> my.mean(aa)
+[1] 4.8
+> bb<-1:10
+> bb
+ [1]  1  2  3  4  5  6  7  8  9 10
+> my.mean(bb)
+[1] 5.5
+> mean(bb)
+[1] 5.5
+> mystery.function<-function(x){}
+> mystery.function<-function(x){ n<-length(x) if (n%%2==1){return(x[(n+1)/2])} else { y<-floor(n/2) z<-(x[y]+x[y+1])/2 return(z)}}
+Error: unexpected 'if' in "mystery.function<-function(x){ n<-length(x) if"
+> mystery.function<-function(x){ n<-length(x) //if (n%%2==1){return(x[(n+1)/2])} else { y<-floor(n/2) z<-(x[y]+x[y+1])/2 return(z)}}
+Error: unexpected '/' in "mystery.function<-function(x){ n<-length(x) //"
+objc[83621]: Class FIFinderSyncExtensionHost is implemented in both /System/Library/PrivateFrameworks/FinderKit.framework/Versions/A/FinderKit (0x7fff94366cd0) and /System/Library/PrivateFrameworks/FileProvider.framework/OverrideBundles/FinderSyncCollaborationFileProviderOverride.bundle/Contents/MacOS/FinderSyncCollaborationFileProviderOverride (0x10fb70cd8). One of the two will be used. Which one is undefined.
+> floor(2)
+[1] 2
+> floor(3)
+[1] 3
+> floor(2.1)
+[1] 2
+> floor(2.5)
+[1] 2
+> floor(2.9)
+[1] 2
+> floor(2.999)
+[1] 2
+> %%2
+Error: unexpected SPECIAL in "%%"
+> %% 2==1
+Error: unexpected SPECIAL in "%%"
+> 2%%2
+[1] 0
+> 3%%2
+[1] 1
+> 4%%2
+[1] 0
+> 5%%2
+[1] 1
+> 6%%2
+[1] 0
+> 2%%2==1
+[1] FALSE
+> 3%%2==1
+[1] TRUE
+> 4%%2==1
+[1] FALSE
+> 5%%2==1
+[1] TRUE
+> 6%%2==1
+[1] FALSE
+> mystery.function(1:9)
+NULL
+> mystery.function(1:10)
+NULL
+> mystery.function          <-          function(x){n          <-          length(x)if          (n          %%          2          ==          1)          {          return(x[(n+1)/2])          }          else          {y          <-          floor(n/2)z          <-          (          x[y]          +          x[y+1]          )/2return(z)}}
+Error: unexpected 'if' in "mystery.function          <-          function(x){n          <-          length(x)if"
+> mystery.function
+function(x){}
+<bytecode: 0x7f96ff561550>
+> mystery.function<-function(x){ n<-length(x) if (n%%2==1){return(x[(n+1)/2])} else { y<-floor(n/2) z<-(x[y]+x[y+1])/2 return(z)}}
+Error: unexpected 'if' in "mystery.function<-function(x){ n<-length(x) if"
+> mystery.function<-function(x){ 
++     n<-length(x) 
++     if (n%%2==1){return(x[(n+1)/2])} else { 
++       y<-floor(n/2) 
++       z<-(x[y]+x[y+1])/2 
++       return(z)
++     }
++ }
+> mystery.function(1:9)
+[1] 5
+> mystery.function(1:10)
+[1] 5.5
+> mystery.function(c(1,4,5.1,16,107))
+[1] 5.1
+> mystery.function(c(1,3,4,7,10))
+[1] 4
+> mystery.function(c(10,1,3,4,7))
+[1] 3
+> mystery.function(c(7,10,1,3,4))
+[1] 1
+> mysetry.function(c(4,7,10,1,3))
+Error in mysetry.function(c(4, 7, 10, 1, 3)) : 
+  could not find function "mysetry.function"
+> sort(mystery.function)
+Error in sort.int(x, na.last = na.last, decreasing = decreasing, ...) : 
+  'x' must be atomic
+> mystery.function(sort)
+Error in x[(n + 1)/2] : object of type 'closure' is not subsettable
+> mystery.function<-sort
+> mystery.function<-function(x){
++     n<-length(x)
++     x.sort<-sort(x)
++     if(n%%2--1){return(x.sort[(n_1)/2])}else{
++       y<-floor(n/2)
++       z<-(x.sort[y]+x.sort[y+1])/2
++       return(z)
++     }
++ }
+> mystery.function(c(4,7,10,1,3)
++ mystery.function(c(4,7,10,1,3))
+Error: unexpected symbol in:
+"mystery.function(c(4,7,10,1,3)
+mystery.function"
+> mystery.function(c(7,10,1,3,4))
+Error in mystery.function(c(7, 10, 1, 3, 4)) : object 'n_1' not found
+>  mystery.function<-function(x){
++      n<-length(x)
++      x.sort<-sort(x)
++      if(n%%2--1){return(x.sort[(n+1)/2])}else{
++        y<-floor(n/2)
++        z<-(x.sort[y]+x.sort[y+1])/2
++        return(z)
++      }
++  }
+> mystery.function(c(7,10,1,3,4))
+[1] 4
+> mystery.function(c(4,7,10,1,3))
+[1] 4
+> airquality
+    Ozone Solar.R Wind Temp Month Day
+1      41     190  7.4   67     5   1
+2      36     118  8.0   72     5   2
+3      12     149 12.6   74     5   3
+4      18     313 11.5   62     5   4
+5      NA      NA 14.3   56     5   5
+6      28      NA 14.9   66     5   6
+7      23     299  8.6   65     5   7
+8      19      99 13.8   59     5   8
+9       8      19 20.1   61     5   9
+10     NA     194  8.6   69     5  10
+11      7      NA  6.9   74     5  11
+12     16     256  9.7   69     5  12
+13     11     290  9.2   66     5  13
+14     14     274 10.9   68     5  14
+15     18      65 13.2   58     5  15
+16     14     334 11.5   64     5  16
+17     34     307 12.0   66     5  17
+18      6      78 18.4   57     5  18
+19     30     322 11.5   68     5  19
+20     11      44  9.7   62     5  20
+21      1       8  9.7   59     5  21
+22     11     320 16.6   73     5  22
+23      4      25  9.7   61     5  23
+24     32      92 12.0   61     5  24
+25     NA      66 16.6   57     5  25
+26     NA     266 14.9   58     5  26
+27     NA      NA  8.0   57     5  27
+28     23      13 12.0   67     5  28
+29     45     252 14.9   81     5  29
+30    115     223  5.7   79     5  30
+31     37     279  7.4   76     5  31
+32     NA     286  8.6   78     6   1
+33     NA     287  9.7   74     6   2
+34     NA     242 16.1   67     6   3
+35     NA     186  9.2   84     6   4
+36     NA     220  8.6   85     6   5
+37     NA     264 14.3   79     6   6
+38     29     127  9.7   82     6   7
+39     NA     273  6.9   87     6   8
+40     71     291 13.8   90     6   9
+41     39     323 11.5   87     6  10
+42     NA     259 10.9   93     6  11
+43     NA     250  9.2   92     6  12
+44     23     148  8.0   82     6  13
+45     NA     332 13.8   80     6  14
+46     NA     322 11.5   79     6  15
+47     21     191 14.9   77     6  16
+48     37     284 20.7   72     6  17
+49     20      37  9.2   65     6  18
+50     12     120 11.5   73     6  19
+51     13     137 10.3   76     6  20
+52     NA     150  6.3   77     6  21
+53     NA      59  1.7   76     6  22
+54     NA      91  4.6   76     6  23
+55     NA     250  6.3   76     6  24
+56     NA     135  8.0   75     6  25
+57     NA     127  8.0   78     6  26
+58     NA      47 10.3   73     6  27
+59     NA      98 11.5   80     6  28
+60     NA      31 14.9   77     6  29
+61     NA     138  8.0   83     6  30
+62    135     269  4.1   84     7   1
+63     49     248  9.2   85     7   2
+64     32     236  9.2   81     7   3
+65     NA     101 10.9   84     7   4
+66     64     175  4.6   83     7   5
+67     40     314 10.9   83     7   6
+68     77     276  5.1   88     7   7
+69     97     267  6.3   92     7   8
+70     97     272  5.7   92     7   9
+71     85     175  7.4   89     7  10
+72     NA     139  8.6   82     7  11
+73     10     264 14.3   73     7  12
+74     27     175 14.9   81     7  13
+75     NA     291 14.9   91     7  14
+76      7      48 14.3   80     7  15
+77     48     260  6.9   81     7  16
+78     35     274 10.3   82     7  17
+79     61     285  6.3   84     7  18
+80     79     187  5.1   87     7  19
+81     63     220 11.5   85     7  20
+82     16       7  6.9   74     7  21
+83     NA     258  9.7   81     7  22
+84     NA     295 11.5   82     7  23
+85     80     294  8.6   86     7  24
+86    108     223  8.0   85     7  25
+87     20      81  8.6   82     7  26
+88     52      82 12.0   86     7  27
+89     82     213  7.4   88     7  28
+90     50     275  7.4   86     7  29
+91     64     253  7.4   83     7  30
+92     59     254  9.2   81     7  31
+93     39      83  6.9   81     8   1
+94      9      24 13.8   81     8   2
+95     16      77  7.4   82     8   3
+96     78      NA  6.9   86     8   4
+97     35      NA  7.4   85     8   5
+98     66      NA  4.6   87     8   6
+99    122     255  4.0   89     8   7
+100    89     229 10.3   90     8   8
+101   110     207  8.0   90     8   9
+102    NA     222  8.6   92     8  10
+103    NA     137 11.5   86     8  11
+104    44     192 11.5   86     8  12
+105    28     273 11.5   82     8  13
+106    65     157  9.7   80     8  14
+107    NA      64 11.5   79     8  15
+108    22      71 10.3   77     8  16
+109    59      51  6.3   79     8  17
+110    23     115  7.4   76     8  18
+111    31     244 10.9   78     8  19
+112    44     190 10.3   78     8  20
+113    21     259 15.5   77     8  21
+114     9      36 14.3   72     8  22
+115    NA     255 12.6   75     8  23
+116    45     212  9.7   79     8  24
+117   168     238  3.4   81     8  25
+118    73     215  8.0   86     8  26
+119    NA     153  5.7   88     8  27
+120    76     203  9.7   97     8  28
+121   118     225  2.3   94     8  29
+122    84     237  6.3   96     8  30
+123    85     188  6.3   94     8  31
+124    96     167  6.9   91     9   1
+125    78     197  5.1   92     9   2
+126    73     183  2.8   93     9   3
+127    91     189  4.6   93     9   4
+128    47      95  7.4   87     9   5
+129    32      92 15.5   84     9   6
+130    20     252 10.9   80     9   7
+131    23     220 10.3   78     9   8
+132    21     230 10.9   75     9   9
+133    24     259  9.7   73     9  10
+134    44     236 14.9   81     9  11
+135    21     259 15.5   76     9  12
+136    28     238  6.3   77     9  13
+137     9      24 10.9   71     9  14
+138    13     112 11.5   71     9  15
+139    46     237  6.9   78     9  16
+140    18     224 13.8   67     9  17
+141    13      27 10.3   76     9  18
+142    24     238 10.3   68     9  19
+143    16     201  8.0   82     9  20
+144    13     238 12.6   64     9  21
+145    23      14  9.2   71     9  22
+146    36     139 10.3   81     9  23
+147     7      49 10.3   69     9  24
+148    14      20 16.6   63     9  25
+149    30     193  6.9   70     9  26
+150    NA     145 13.2   77     9  27
+151    14     191 14.3   75     9  28
+152    18     131  8.0   76     9  29
+153    20     223 11.5   68     9  30
+> head(airquality)
+  Ozone Solar.R Wind Temp Month Day
+1    41     190  7.4   67     5   1
+2    36     118  8.0   72     5   2
+3    12     149 12.6   74     5   3
+4    18     313 11.5   62     5   4
+5    NA      NA 14.3   56     5   5
+6    28      NA 14.9   66     5   6
+> airquality[1,1]
+[1] 41
+> airquality[1,2]
+[1] 190
+> airquality[1,]
+  Ozone Solar.R Wind Temp Month Day
+1    41     190  7.4   67     5   1
+> airquality[,2]
+  [1] 190 118 149 313  NA  NA 299  99  19 194  NA 256 290 274  65 334 307  78
+ [19] 322  44   8 320  25  92  66 266  NA  13 252 223 279 286 287 242 186 220
+ [37] 264 127 273 291 323 259 250 148 332 322 191 284  37 120 137 150  59  91
+ [55] 250 135 127  47  98  31 138 269 248 236 101 175 314 276 267 272 175 139
+ [73] 264 175 291  48 260 274 285 187 220   7 258 295 294 223  81  82 213 275
+ [91] 253 254  83  24  77  NA  NA  NA 255 229 207 222 137 192 273 157  64  71
+[109]  51 115 244 190 259  36 255 212 238 215 153 203 225 237 188 167 197 183
+[127] 189  95  92 252 220 230 259 236 259 238  24 112 237 224  27 238 201 238
+[145]  14 139  49  20 193 145 191 131 223
+> ozone<-airquality[,1]
+> ozone
+  [1]  41  36  12  18  NA  28  23  19   8  NA   7  16  11  14  18  14  34   6
+ [19]  30  11   1  11   4  32  NA  NA  NA  23  45 115  37  NA  NA  NA  NA  NA
+ [37]  NA  29  NA  71  39  NA  NA  23  NA  NA  21  37  20  12  13  NA  NA  NA
+ [55]  NA  NA  NA  NA  NA  NA  NA 135  49  32  NA  64  40  77  97  97  85  NA
+ [73]  10  27  NA   7  48  35  61  79  63  16  NA  NA  80 108  20  52  82  50
+ [91]  64  59  39   9  16  78  35  66 122  89 110  NA  NA  44  28  65  NA  22
+[109]  59  23  31  44  21   9  NA  45 168  73  NA  76 118  84  85  96  78  73
+[127]  91  47  32  20  23  21  24  44  21  28   9  13  46  18  13  24  16  13
+[145]  23  36   7  14  30  NA  14  18  20
+> wind<-airquality[,3]
+> wind
+  [1]  7.4  8.0 12.6 11.5 14.3 14.9  8.6 13.8 20.1  8.6  6.9  9.7  9.2 10.9
+ [15] 13.2 11.5 12.0 18.4 11.5  9.7  9.7 16.6  9.7 12.0 16.6 14.9  8.0 12.0
+ [29] 14.9  5.7  7.4  8.6  9.7 16.1  9.2  8.6 14.3  9.7  6.9 13.8 11.5 10.9
+ [43]  9.2  8.0 13.8 11.5 14.9 20.7  9.2 11.5 10.3  6.3  1.7  4.6  6.3  8.0
+ [57]  8.0 10.3 11.5 14.9  8.0  4.1  9.2  9.2 10.9  4.6 10.9  5.1  6.3  5.7
+ [71]  7.4  8.6 14.3 14.9 14.9 14.3  6.9 10.3  6.3  5.1 11.5  6.9  9.7 11.5
+ [85]  8.6  8.0  8.6 12.0  7.4  7.4  7.4  9.2  6.9 13.8  7.4  6.9  7.4  4.6
+ [99]  4.0 10.3  8.0  8.6 11.5 11.5 11.5  9.7 11.5 10.3  6.3  7.4 10.9 10.3
+[113] 15.5 14.3 12.6  9.7  3.4  8.0  5.7  9.7  2.3  6.3  6.3  6.9  5.1  2.8
+[127]  4.6  7.4 15.5 10.9 10.3 10.9  9.7 14.9 15.5  6.3 10.9 11.5  6.9 13.8
+[141] 10.3 10.3  8.0 12.6  9.2 10.3 10.3 16.6  6.9 13.2 14.3  8.0 11.5
+> attach(airquality)
+> Ozone
+  [1]  41  36  12  18  NA  28  23  19   8  NA   7  16  11  14  18  14  34   6
+ [19]  30  11   1  11   4  32  NA  NA  NA  23  45 115  37  NA  NA  NA  NA  NA
+ [37]  NA  29  NA  71  39  NA  NA  23  NA  NA  21  37  20  12  13  NA  NA  NA
+ [55]  NA  NA  NA  NA  NA  NA  NA 135  49  32  NA  64  40  77  97  97  85  NA
+ [73]  10  27  NA   7  48  35  61  79  63  16  NA  NA  80 108  20  52  82  50
+ [91]  64  59  39   9  16  78  35  66 122  89 110  NA  NA  44  28  65  NA  22
+[109]  59  23  31  44  21   9  NA  45 168  73  NA  76 118  84  85  96  78  73
+[127]  91  47  32  20  23  21  24  44  21  28   9  13  46  18  13  24  16  13
+[145]  23  36   7  14  30  NA  14  18  20
+> Wind
+  [1]  7.4  8.0 12.6 11.5 14.3 14.9  8.6 13.8 20.1  8.6  6.9  9.7  9.2 10.9
+ [15] 13.2 11.5 12.0 18.4 11.5  9.7  9.7 16.6  9.7 12.0 16.6 14.9  8.0 12.0
+ [29] 14.9  5.7  7.4  8.6  9.7 16.1  9.2  8.6 14.3  9.7  6.9 13.8 11.5 10.9
+ [43]  9.2  8.0 13.8 11.5 14.9 20.7  9.2 11.5 10.3  6.3  1.7  4.6  6.3  8.0
+ [57]  8.0 10.3 11.5 14.9  8.0  4.1  9.2  9.2 10.9  4.6 10.9  5.1  6.3  5.7
+ [71]  7.4  8.6 14.3 14.9 14.9 14.3  6.9 10.3  6.3  5.1 11.5  6.9  9.7 11.5
+ [85]  8.6  8.0  8.6 12.0  7.4  7.4  7.4  9.2  6.9 13.8  7.4  6.9  7.4  4.6
+ [99]  4.0 10.3  8.0  8.6 11.5 11.5 11.5  9.7 11.5 10.3  6.3  7.4 10.9 10.3
+[113] 15.5 14.3 12.6  9.7  3.4  8.0  5.7  9.7  2.3  6.3  6.3  6.9  5.1  2.8
+[127]  4.6  7.4 15.5 10.9 10.3 10.9  9.7 14.9 15.5  6.3 10.9 11.5  6.9 13.8
+[141] 10.3 10.3  8.0 12.6  9.2 10.3 10.3 16.6  6.9 13.2 14.3  8.0 11.5
+> hist(ozone)
+> hist(wind)
+> hist(wind)
+> hist(ozone)
+> mean(ozone)
+[1] NA
+> avg(ozone)
+Error in avg(ozone) : could not find function "avg"
+> mean(Ozone)
+[1] NA
+> mean(wind)
+[1] 9.957516
+> mean(Ozone, na.rm = FALSE)
+[1] NA
+> result.mean<-mean(ozone)
+> print(result.mean)
+[1] NA
+> hist(ozone)
+> abline(v=mean(ozone, na.rm=TRUE), col="red", lwd=3)
+> abline(v=median(ozone, na.rm=TRUE), col="blue", lwd=6)
+> hist(wind)
+> abline(v=mean(wind, na.rm=TRUE), col="red", lwd=3)
+> abline(v=median(wind, na.rm=TRUE), col="blue", lwd=6)
+> a<-rnorm(1000)
+> hist(a)
+> hist(a,breaks=40)
+> b<-quantile(a,c(.25,.5,.75))
+> b
+        25%         50%         75% 
+-0.67123561 -0.05997275  0.65463491 
+> abline(v=b[1], col=1, lwd=3)
+> abline(v=b[2], col=2, lwd=3)
+> abline(v=b[3], col=3, lwd=3)
+> a<-rexp(1000)
+> hist(a,breaks=40)
+> seq(1,10,1)
+ [1]  1  2  3  4  5  6  7  8  9 10
+> seq(1.1,2.9,.2)
+ [1] 1.1 1.3 1.5 1.7 1.9 2.1 2.3 2.5 2.7 2.9
+> seq(2.9,1.1,-.2)
+ [1] 2.9 2.7 2.5 2.3 2.1 1.9 1.7 1.5 1.3 1.1
+> b<-quantile(a,seq(.1,.9,.1))
+> b
+      10%       20%       30%       40%       50%       60%       70% 
+0.1179265 0.2519795 0.3590659 0.5138689 0.6583102 0.8778762 1.1713257 
+      80%       90% 
+1.6060670 2.2693324 
+> hist(b)
+> hist(a)
+> hist(a,breaks=40)
+> points(b,rep(25,9),col-1:9,pch=20,cex=3)
+Error in col - 1:9 : non-numeric argument to binary operator
+> points(b,rep(25,9),col=1:9,pch=20,cex=3)
+> rep(25,9)
+[1] 25 25 25 25 25 25 25 25 25
+> rep(1,5)
+[1] 1 1 1 1 1
+> rep(5,1)
+[1] 5
+> rep(c(1,2,3),4)
+ [1] 1 2 3 1 2 3 1 2 3 1 2 3
+> rep(c(1,2,3), ea=4)
+ [1] 1 1 1 1 2 2 2 2 3 3 3 3
+> rep(c(1,2,3),4,ea=4)
+ [1] 1 1 1 1 2 2 2 2 3 3 3 3 1 1 1 1 2 2 2 2 3 3 3 3 1 1 1 1 2 2 2 2 3 3 3 3 1
+[38] 1 1 1 2 2 2 2 3 3 3 3
+> hist(a,breaks=40)
+> points(b,rep(25,9), col=1.9, pch=20, cex=3)
+> hist(a,breaks=40)
+> points(b,rep(25,9), col=1.9, pch="Q", cex=40)
+> hist(a,breaks=40)
+> points(b,rep(25,9), col=1.9, pch="Q", cex=.7)
+> hist(a,breaks=40)
+> points(b,rep(25,9), col=1.9, pch="Swimmy", cex=2)
+> hist(a,breaks=40)
+> points(b,rep(25,9), col=1.9, pch="+", cex=2)
+> ?points
+starting httpd help server ... done
+> ?rep
+> example(rep)
+
+rep> rep(1:4, 2)
+[1] 1 2 3 4 1 2 3 4
+
+rep> rep(1:4, each = 2)       # not the same.
+[1] 1 1 2 2 3 3 4 4
+
+rep> rep(1:4, c(2,2,2,2))     # same as second.
+[1] 1 1 2 2 3 3 4 4
+
+rep> rep(1:4, c(2,1,2,1))
+[1] 1 1 2 3 3 4
+
+rep> rep(1:4, each = 2, len = 4)    # first 4 only.
+[1] 1 1 2 2
+
+rep> rep(1:4, each = 2, len = 10)   # 8 integers plus two recycled 1's.
+ [1] 1 1 2 2 3 3 4 4 1 1
+
+rep> rep(1:4, each = 2, times = 3)  # length 24, 3 complete replications
+ [1] 1 1 2 2 3 3 4 4 1 1 2 2 3 3 4 4 1 1 2 2 3 3 4 4
+
+rep> rep(1, 40*(1-.8)) # length 7 on most platforms
+[1] 1 1 1 1 1 1 1
+
+rep> rep(1, 40*(1-.8)+1e-7) # better
+[1] 1 1 1 1 1 1 1 1
+
+rep> ## replicate a list
+rep> fred <- list(happy = 1:10, name = "squash")
+
+rep> rep(fred, 5)
+$happy
+ [1]  1  2  3  4  5  6  7  8  9 10
+
+$name
+[1] "squash"
+
+$happy
+ [1]  1  2  3  4  5  6  7  8  9 10
+
+$name
+[1] "squash"
+
+$happy
+ [1]  1  2  3  4  5  6  7  8  9 10
+
+$name
+[1] "squash"
+
+$happy
+ [1]  1  2  3  4  5  6  7  8  9 10
+
+$name
+[1] "squash"
+
+$happy
+ [1]  1  2  3  4  5  6  7  8  9 10
+
+$name
+[1] "squash"
+
+
+rep> # date-time objects
+rep> x <- .leap.seconds[1:3]
+
+rep> rep(x, 2)
+[1] "1972-06-30 20:00:00 EDT" "1972-12-31 19:00:00 EST"
+[3] "1973-12-31 19:00:00 EST" "1972-06-30 20:00:00 EDT"
+[5] "1972-12-31 19:00:00 EST" "1973-12-31 19:00:00 EST"
+
+rep> rep(as.POSIXlt(x), rep(2, 3))
+[1] "1972-06-30 20:00:00 EDT" "1972-06-30 20:00:00 EDT"
+[3] "1972-12-31 19:00:00 EST" "1972-12-31 19:00:00 EST"
+[5] "1973-12-31 19:00:00 EST" "1973-12-31 19:00:00 EST"
+
+rep> ## named factor
+rep> x <- factor(LETTERS[1:4]); names(x) <- letters[1:4]
+
+rep> x
+a b c d 
+A B C D 
+Levels: A B C D
+
+rep> rep(x, 2)
+a b c d a b c d 
+A B C D A B C D 
+Levels: A B C D
+
+rep> rep(x, each = 2)
+a a b b c c d d 
+A A B B C C D D 
+Levels: A B C D
+
+rep> rep.int(x, 2)  # no names
+[1] A B C D A B C D
+Levels: A B C D
+
+rep> rep_len(x, 10)
+ [1] A B C D A B C D A B
+Levels: A B C D
+> baseball <- read.table("http://www.amstat.org/publications/jse/datasets/baseball.dat.txt", header= FALSE )
+> head(baseball)
+    V1    V2    V3  V4  V5 V6 V7 V8  V9 V10 V11 V12 V13 V14 V15 V16 V17
+1 3300 0.272 0.302  69 153 21  4 31 104  22  80   4   3   1   0   0   0
+2 2600 0.269 0.335  58 111 17  2 18  66  39  69   0   3   1   1   0   0
+3 2500 0.249 0.337  54 115 15  1 17  73  63 116   6   5   1   0   0   0
+4 2475 0.260 0.292  59 128 22  7 12  50  23  64  21  21   0   0   1   0
+5 2313 0.273 0.346  87 169 28  5  8  58  70  53   3   8   0   0   1   0
+6 2175 0.291 0.379 104 170 32  2 26 100  87  89  22   4   1   0   0   0
+                V18
+1 Andre Dawson     
+2 Steve Buchele    
+3 Kal Daniels      
+4 Shawon Dunston   
+5 Mark Grace       
+6 Ryne Sandberg    
+> colnames(baseball)          <-          c("Sal",          "BA",          "OBP",          "R",          "H",          "Doub","Trip",          "HR",          "RBI",          "W",          "K",          "SB",          "E",          "FreeEl","Free",          "ArbEl",          "Arb",          "Name")
+> head(baseball)
+   Sal    BA   OBP   R   H Doub Trip HR RBI  W   K SB  E FreeEl Free ArbEl Arb
+1 3300 0.272 0.302  69 153   21    4 31 104 22  80  4  3      1    0     0   0
+2 2600 0.269 0.335  58 111   17    2 18  66 39  69  0  3      1    1     0   0
+3 2500 0.249 0.337  54 115   15    1 17  73 63 116  6  5      1    0     0   0
+4 2475 0.260 0.292  59 128   22    7 12  50 23  64 21 21      0    0     1   0
+5 2313 0.273 0.346  87 169   28    5  8  58 70  53  3  8      0    0     1   0
+6 2175 0.291 0.379 104 170   32    2 26 100 87  89 22  4      1    0     0   0
+               Name
+1 Andre Dawson     
+2 Steve Buchele    
+3 Kal Daniels      
+4 Shawon Dunston   
+5 Mark Grace       
+6 Ryne Sandberg    
+> library(MASS)
+> help(package="MASS")
+> hist(Volume)
+Error in hist(Volume) : object 'Volume' not found
+> hist(volume)
+Error in hist(volume) : object 'volume' not found
+> library
+function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE, 
+    logical.return = FALSE, warn.conflicts, quietly = FALSE, 
+    verbose = getOption("verbose"), mask.ok, exclude, include.only, 
+    attach.required = missing(include.only)) 
+{
+    conf.ctrl <- getOption("conflicts.policy")
+    if (is.character(conf.ctrl)) 
+        conf.ctrl <- switch(conf.ctrl, strict = list(error = TRUE, 
+            warn = FALSE), depends.ok = list(error = TRUE, generics.ok = TRUE, 
+            can.mask = c("base", "methods", "utils", "grDevices", 
+                "graphics", "stats"), depends.ok = TRUE), warning(gettextf("unknown conflict policy: %s", 
+            sQuote(conf.ctrl)), call. = FALSE, domain = NA))
+    if (!is.list(conf.ctrl)) 
+        conf.ctrl <- NULL
+    stopOnConflict <- isTRUE(conf.ctrl$error)
+    if (missing(warn.conflicts)) 
+        warn.conflicts <- if (isFALSE(conf.ctrl$warn)) 
+            FALSE
+        else TRUE
+    if ((!missing(include.only)) && (!missing(exclude))) 
+        stop(gettext("only one of 'include.only' and 'exclude' can be used"), 
+            call. = FALSE, domain = NA)
+    testRversion <- function(pkgInfo, pkgname, pkgpath) {
+        if (is.null(built <- pkgInfo$Built)) 
+            stop(gettextf("package %s has not been installed properly\n", 
+                sQuote(pkgname)), call. = FALSE, domain = NA)
+        R_version_built_under <- as.numeric_version(built$R)
+        if (R_version_built_under < "3.0.0") 
+            stop(gettextf("package %s was built before R 3.0.0: please re-install it", 
+                sQuote(pkgname)), call. = FALSE, domain = NA)
+        current <- getRversion()
+        if (length(Rdeps <- pkgInfo$Rdepends2)) {
+            for (dep in Rdeps) if (length(dep) > 1L) {
+                target <- dep$version
+                res <- if (is.character(target)) {
+                  do.call(dep$op, list(as.numeric(R.version[["svn rev"]]), 
+                    as.numeric(sub("^r", "", dep$version))))
+                }
+                else {
+                  do.call(dep$op, list(current, as.numeric_version(target)))
+                }
+                if (!res) 
+                  stop(gettextf("This is R %s, package %s needs %s %s", 
+                    current, sQuote(pkgname), dep$op, target), 
+                    call. = FALSE, domain = NA)
+            }
+        }
+        if (R_version_built_under > current) 
+            warning(gettextf("package %s was built under R version %s", 
+                sQuote(pkgname), as.character(built$R)), call. = FALSE, 
+                domain = NA)
+        platform <- built$Platform
+        r_arch <- .Platform$r_arch
+        if (.Platform$OS.type == "unix") {
+        }
+        else {
+            if (nzchar(platform) && !grepl("mingw", platform)) 
+                stop(gettextf("package %s was built for %s", 
+                  sQuote(pkgname), platform), call. = FALSE, 
+                  domain = NA)
+        }
+        if (nzchar(r_arch) && file.exists(file.path(pkgpath, 
+            "libs")) && !file.exists(file.path(pkgpath, "libs", 
+            r_arch))) 
+            stop(gettextf("package %s is not installed for 'arch = %s'", 
+                sQuote(pkgname), r_arch), call. = FALSE, domain = NA)
+    }
+    checkNoGenerics <- function(env, pkg) {
+        nenv <- env
+        ns <- .getNamespace(as.name(pkg))
+        if (!is.null(ns)) 
+            nenv <- asNamespace(ns)
+        if (exists(".noGenerics", envir = nenv, inherits = FALSE)) 
+            TRUE
+        else {
+            !any(startsWith(names(env), ".__T"))
+        }
+    }
+    checkConflicts <- function(package, pkgname, pkgpath, nogenerics, 
+        env) {
+        dont.mind <- c("last.dump", "last.warning", ".Last.value", 
+            ".Random.seed", ".Last.lib", ".onDetach", ".packageName", 
+            ".noGenerics", ".required", ".no_S3_generics", ".Depends", 
+            ".requireCachedGenerics")
+        sp <- search()
+        lib.pos <- which(sp == pkgname)
+        ob <- names(as.environment(lib.pos))
+        if (!nogenerics) {
+            these <- ob[startsWith(ob, ".__T__")]
+            gen <- gsub(".__T__(.*):([^:]+)", "\\1", these)
+            from <- gsub(".__T__(.*):([^:]+)", "\\2", these)
+            gen <- gen[from != package]
+            ob <- ob[!(ob %in% gen)]
+        }
+        ipos <- seq_along(sp)[-c(lib.pos, match(c("Autoloads", 
+            "CheckExEnv"), sp, 0L))]
+        cpos <- NULL
+        conflicts <- vector("list", 0)
+        for (i in ipos) {
+            obj.same <- match(names(as.environment(i)), ob, nomatch = 0L)
+            if (any(obj.same > 0)) {
+                same <- ob[obj.same]
+                same <- same[!(same %in% dont.mind)]
+                Classobjs <- which(startsWith(same, ".__"))
+                if (length(Classobjs)) 
+                  same <- same[-Classobjs]
+                same.isFn <- function(where) vapply(same, exists, 
+                  NA, where = where, mode = "function", inherits = FALSE)
+                same <- same[same.isFn(i) == same.isFn(lib.pos)]
+                not.Ident <- function(ch, TRAFO = identity, ...) vapply(ch, 
+                  function(.) !identical(TRAFO(get(., i)), TRAFO(get(., 
+                    lib.pos)), ...), NA)
+                if (length(same)) 
+                  same <- same[not.Ident(same)]
+                if (length(same) && identical(sp[i], "package:base")) 
+                  same <- same[not.Ident(same, ignore.environment = TRUE)]
+                if (length(same)) {
+                  conflicts[[sp[i]]] <- same
+                  cpos[sp[i]] <- i
+                }
+            }
+        }
+        if (length(conflicts)) {
+            if (stopOnConflict) {
+                emsg <- ""
+                pkg <- names(conflicts)
+                notOK <- vector("list", 0)
+                for (i in seq_along(conflicts)) {
+                  pkgname <- sub("^package:", "", pkg[i])
+                  if (pkgname %in% canMaskEnv$canMask) 
+                    next
+                  same <- conflicts[[i]]
+                  if (is.list(mask.ok)) 
+                    myMaskOK <- mask.ok[[pkgname]]
+                  else myMaskOK <- mask.ok
+                  if (isTRUE(myMaskOK)) 
+                    same <- NULL
+                  else if (is.character(myMaskOK)) 
+                    same <- setdiff(same, myMaskOK)
+                  if (length(same)) {
+                    notOK[[pkg[i]]] <- same
+                    msg <- .maskedMsg(sort(same), pkg = sQuote(pkg[i]), 
+                      by = cpos[i] < lib.pos)
+                    emsg <- paste(emsg, msg, sep = "\n")
+                  }
+                }
+                if (length(notOK)) {
+                  msg <- gettextf("Conflicts attaching package %s:\n%s", 
+                    sQuote(package), emsg)
+                  stop(errorCondition(msg, package = package, 
+                    conflicts = conflicts, class = "packageConflictError"))
+                }
+            }
+            if (warn.conflicts) {
+                packageStartupMessage(gettextf("\nAttaching package: %s\n", 
+                  sQuote(package)), domain = NA)
+                pkg <- names(conflicts)
+                for (i in seq_along(conflicts)) {
+                  msg <- .maskedMsg(sort(conflicts[[i]]), pkg = sQuote(pkg[i]), 
+                    by = cpos[i] < lib.pos)
+                  packageStartupMessage(msg, domain = NA)
+                }
+            }
+        }
+    }
+    if (verbose && quietly) 
+        message("'verbose' and 'quietly' are both true; being verbose then ..")
+    if (!missing(package)) {
+        if (is.null(lib.loc)) 
+            lib.loc <- .libPaths()
+        lib.loc <- lib.loc[dir.exists(lib.loc)]
+        if (!character.only) 
+            package <- as.character(substitute(package))
+        if (length(package) != 1L) 
+            stop("'package' must be of length 1")
+        if (is.na(package) || (package == "")) 
+            stop("invalid package name")
+        pkgname <- paste0("package:", package)
+        newpackage <- is.na(match(pkgname, search()))
+        if (newpackage) {
+            pkgpath <- find.package(package, lib.loc, quiet = TRUE, 
+                verbose = verbose)
+            if (length(pkgpath) == 0L) {
+                if (length(lib.loc) && !logical.return) 
+                  stop(packageNotFoundError(package, lib.loc, 
+                    sys.call()))
+                txt <- if (length(lib.loc)) 
+                  gettextf("there is no package called %s", sQuote(package))
+                else gettext("no library trees found in 'lib.loc'")
+                if (logical.return) {
+                  warning(txt, domain = NA)
+                  return(FALSE)
+                }
+                else stop(txt, domain = NA)
+            }
+            which.lib.loc <- normalizePath(dirname(pkgpath), 
+                "/", TRUE)
+            pfile <- system.file("Meta", "package.rds", package = package, 
+                lib.loc = which.lib.loc)
+            if (!nzchar(pfile)) 
+                stop(gettextf("%s is not a valid installed package", 
+                  sQuote(package)), domain = NA)
+            pkgInfo <- readRDS(pfile)
+            testRversion(pkgInfo, package, pkgpath)
+            if (is.character(pos)) {
+                npos <- match(pos, search())
+                if (is.na(npos)) {
+                  warning(gettextf("%s not found on search path, using pos = 2", 
+                    sQuote(pos)), domain = NA)
+                  pos <- 2
+                }
+                else pos <- npos
+            }
+            deps <- unique(names(pkgInfo$Depends))
+            depsOK <- isTRUE(conf.ctrl$depends.ok)
+            if (depsOK) {
+                canMaskEnv <- dynGet("__library_can_mask__", 
+                  NULL)
+                if (is.null(canMaskEnv)) {
+                  canMaskEnv <- new.env()
+                  canMaskEnv$canMask <- union("base", conf.ctrl$can.mask)
+                  "__library_can_mask__" <- canMaskEnv
+                }
+                canMaskEnv$canMask <- unique(c(package, deps, 
+                  canMaskEnv$canMask))
+            }
+            else canMaskEnv <- NULL
+            if (attach.required) 
+                .getRequiredPackages2(pkgInfo, quietly = quietly)
+            cr <- conflictRules(package)
+            if (missing(mask.ok)) 
+                mask.ok <- cr$mask.ok
+            if (missing(exclude)) 
+                exclude <- cr$exclude
+            if (packageHasNamespace(package, which.lib.loc)) {
+                if (isNamespaceLoaded(package)) {
+                  newversion <- as.numeric_version(pkgInfo$DESCRIPTION["Version"])
+                  oldversion <- as.numeric_version(getNamespaceVersion(package))
+                  if (newversion != oldversion) {
+                    tryCatch(unloadNamespace(package), error = function(e) {
+                      P <- if (!is.null(cc <- conditionCall(e))) 
+                        paste("Error in", deparse(cc)[1L], ": ")
+                      else "Error : "
+                      stop(gettextf("Package %s version %s cannot be unloaded:\n %s", 
+                        sQuote(package), oldversion, paste0(P, 
+                          conditionMessage(e), "\n")), domain = NA)
+                    })
+                  }
+                }
+                tt <- tryCatch({
+                  attr(package, "LibPath") <- which.lib.loc
+                  ns <- loadNamespace(package, lib.loc)
+                  env <- attachNamespace(ns, pos = pos, deps, 
+                    exclude, include.only)
+                }, error = function(e) {
+                  P <- if (!is.null(cc <- conditionCall(e))) 
+                    paste(" in", deparse(cc)[1L])
+                  else ""
+                  msg <- gettextf("package or namespace load failed for %s%s:\n %s", 
+                    sQuote(package), P, conditionMessage(e))
+                  if (logical.return) 
+                    message(paste("Error:", msg), domain = NA)
+                  else stop(msg, call. = FALSE, domain = NA)
+                })
+                if (logical.return && is.null(tt)) 
+                  return(FALSE)
+                attr(package, "LibPath") <- NULL
+                {
+                  on.exit(detach(pos = pos))
+                  nogenerics <- !.isMethodsDispatchOn() || checkNoGenerics(env, 
+                    package)
+                  if (isFALSE(conf.ctrl$generics.ok) || (stopOnConflict && 
+                    !isTRUE(conf.ctrl$generics.ok))) 
+                    nogenerics <- TRUE
+                  if (stopOnConflict || (warn.conflicts && !exists(".conflicts.OK", 
+                    envir = env, inherits = FALSE))) 
+                    checkConflicts(package, pkgname, pkgpath, 
+                      nogenerics, ns)
+                  on.exit()
+                  if (logical.return) 
+                    return(TRUE)
+                  else return(invisible(.packages()))
+                }
+            }
+            else stop(gettextf("package %s does not have a namespace and should be re-installed", 
+                sQuote(package)), domain = NA)
+        }
+        if (verbose && !newpackage) 
+            warning(gettextf("package %s already present in search()", 
+                sQuote(package)), domain = NA)
+    }
+    else if (!missing(help)) {
+        if (!character.only) 
+            help <- as.character(substitute(help))
+        pkgName <- help[1L]
+        pkgPath <- find.package(pkgName, lib.loc, verbose = verbose)
+        docFiles <- c(file.path(pkgPath, "Meta", "package.rds"), 
+            file.path(pkgPath, "INDEX"))
+        if (file.exists(vignetteIndexRDS <- file.path(pkgPath, 
+            "Meta", "vignette.rds"))) 
+            docFiles <- c(docFiles, vignetteIndexRDS)
+        pkgInfo <- vector("list", 3L)
+        readDocFile <- function(f) {
+            if (basename(f) %in% "package.rds") {
+                txt <- readRDS(f)$DESCRIPTION
+                if ("Encoding" %in% names(txt)) {
+                  to <- if (Sys.getlocale("LC_CTYPE") == "C") 
+                    "ASCII//TRANSLIT"
+                  else ""
+                  tmp <- try(iconv(txt, from = txt["Encoding"], 
+                    to = to))
+                  if (!inherits(tmp, "try-error")) 
+                    txt <- tmp
+                  else warning("'DESCRIPTION' has an 'Encoding' field and re-encoding is not possible", 
+                    call. = FALSE)
+                }
+                nm <- paste0(names(txt), ":")
+                formatDL(nm, txt, indent = max(nchar(nm, "w")) + 
+                  3L)
+            }
+            else if (basename(f) %in% "vignette.rds") {
+                txt <- readRDS(f)
+                if (is.data.frame(txt) && nrow(txt)) 
+                  cbind(basename(gsub("\\.[[:alpha:]]+$", "", 
+                    txt$File)), paste(txt$Title, paste0(rep.int("(source", 
+                    NROW(txt)), ifelse(nzchar(txt$PDF), ", pdf", 
+                    ""), ")")))
+                else NULL
+            }
+            else readLines(f)
+        }
+        for (i in which(file.exists(docFiles))) pkgInfo[[i]] <- readDocFile(docFiles[i])
+        y <- list(name = pkgName, path = pkgPath, info = pkgInfo)
+        class(y) <- "packageInfo"
+        return(y)
+    }
+    else {
+        if (is.null(lib.loc)) 
+            lib.loc <- .libPaths()
+        db <- matrix(character(), nrow = 0L, ncol = 3L)
+        nopkgs <- character()
+        for (lib in lib.loc) {
+            a <- .packages(all.available = TRUE, lib.loc = lib)
+            for (i in sort(a)) {
+                file <- system.file("Meta", "package.rds", package = i, 
+                  lib.loc = lib)
+                title <- if (nzchar(file)) {
+                  txt <- readRDS(file)
+                  if (is.list(txt)) 
+                    txt <- txt$DESCRIPTION
+                  if ("Encoding" %in% names(txt)) {
+                    to <- if (Sys.getlocale("LC_CTYPE") == "C") 
+                      "ASCII//TRANSLIT"
+                    else ""
+                    tmp <- try(iconv(txt, txt["Encoding"], to, 
+                      "?"))
+                    if (!inherits(tmp, "try-error")) 
+                      txt <- tmp
+                    else warning("'DESCRIPTION' has an 'Encoding' field and re-encoding is not possible", 
+                      call. = FALSE)
+                  }
+                  txt["Title"]
+                }
+                else NA
+                if (is.na(title)) 
+                  title <- " ** No title available ** "
+                db <- rbind(db, cbind(i, lib, title))
+            }
+            if (length(a) == 0L) 
+                nopkgs <- c(nopkgs, lib)
+        }
+        dimnames(db) <- list(NULL, c("Package", "LibPath", "Title"))
+        if (length(nopkgs) && !missing(lib.loc)) {
+            pkglist <- paste(sQuote(nopkgs), collapse = ", ")
+            msg <- sprintf(ngettext(length(nopkgs), "library %s contains no packages", 
+                "libraries %s contain no packages"), pkglist)
+            warning(msg, domain = NA)
+        }
+        y <- list(header = NULL, results = db, footer = NULL)
+        class(y) <- "libraryIQR"
+        return(y)
+    }
+    if (logical.return) 
+        TRUE
+    else invisible(.packages())
+}
+<bytecode: 0x7f96fbb2ca20>
+<environment: namespace:base>
+> hist(RBI)
+Error in hist(RBI) : object 'RBI' not found
+> head(baseball)
+   Sal    BA   OBP   R   H Doub Trip HR RBI  W   K SB  E FreeEl Free ArbEl Arb
+1 3300 0.272 0.302  69 153   21    4 31 104 22  80  4  3      1    0     0   0
+2 2600 0.269 0.335  58 111   17    2 18  66 39  69  0  3      1    1     0   0
+3 2500 0.249 0.337  54 115   15    1 17  73 63 116  6  5      1    0     0   0
+4 2475 0.260 0.292  59 128   22    7 12  50 23  64 21 21      0    0     1   0
+5 2313 0.273 0.346  87 169   28    5  8  58 70  53  3  8      0    0     1   0
+6 2175 0.291 0.379 104 170   32    2 26 100 87  89 22  4      1    0     0   0
+               Name
+1 Andre Dawson     
+2 Steve Buchele    
+3 Kal Daniels      
+4 Shawon Dunston   
+5 Mark Grace       
+6 Ryne Sandberg    
+> hist("RBI")
+Error in hist.default("RBI") : 'x' must be numeric
+> RBI<-baseball(,9)
+Error in baseball(, 9) : could not find function "baseball"
+> baseball <- read.table("http://www.amstat.org/publications/jse/datasets/baseball.dat.txt", header= FALSE )
+> baseball(head)
+Error in baseball(head) : could not find function "baseball"
+> baseball <- read.table("http://www.amstat.org/publications/jse/datasets/baseball.dat.txt", header= FALSE )
+> > head(baseball)
+Error: unexpected '>' in ">"
+> baseball <- read.table("http://www.amstat.org/publications/jse/datasets/baseball.dat.txt", header= FALSE )
+> head(baseball)
+    V1    V2    V3  V4  V5 V6 V7 V8  V9 V10 V11 V12 V13 V14 V15 V16 V17
+1 3300 0.272 0.302  69 153 21  4 31 104  22  80   4   3   1   0   0   0
+2 2600 0.269 0.335  58 111 17  2 18  66  39  69   0   3   1   1   0   0
+3 2500 0.249 0.337  54 115 15  1 17  73  63 116   6   5   1   0   0   0
+4 2475 0.260 0.292  59 128 22  7 12  50  23  64  21  21   0   0   1   0
+5 2313 0.273 0.346  87 169 28  5  8  58  70  53   3   8   0   0   1   0
+6 2175 0.291 0.379 104 170 32  2 26 100  87  89  22   4   1   0   0   0
+                V18
+1 Andre Dawson     
+2 Steve Buchele    
+3 Kal Daniels      
+4 Shawon Dunston   
+5 Mark Grace       
+6 Ryne Sandberg    
+> colnames(baseball)          <-          c("Sal",          "BA",          "OBP",          "R",          "H",          "Doub","Trip",          "HR",          "RBI",          "W",          "K",          "SB",          "E",          "FreeEl","Free",          "ArbEl",          "Arb",          "Name")
+> baseball(head)
+Error in baseball(head) : could not find function "baseball"
+> head(baseball)
+   Sal    BA   OBP   R   H Doub Trip HR RBI  W   K SB  E FreeEl Free ArbEl Arb
+1 3300 0.272 0.302  69 153   21    4 31 104 22  80  4  3      1    0     0   0
+2 2600 0.269 0.335  58 111   17    2 18  66 39  69  0  3      1    1     0   0
+3 2500 0.249 0.337  54 115   15    1 17  73 63 116  6  5      1    0     0   0
+4 2475 0.260 0.292  59 128   22    7 12  50 23  64 21 21      0    0     1   0
+5 2313 0.273 0.346  87 169   28    5  8  58 70  53  3  8      0    0     1   0
+6 2175 0.291 0.379 104 170   32    2 26 100 87  89 22  4      1    0     0   0
+               Name
+1 Andre Dawson     
+2 Steve Buchele    
+3 Kal Daniels      
+4 Shawon Dunston   
+5 Mark Grace       
+6 Ryne Sandberg    
+> RBI<-baseball(,9)
+Error in baseball(, 9) : could not find function "baseball"
+> RBI<-(baseball(,9))
+Error in baseball(, 9) : could not find function "baseball"
+> RBI<-"baseball"(,9)
+Error in baseball(, 9) : could not find function "baseball"
+> hist( Volume )
+Error in hist(Volume) : object 'Volume' not found
+> ?truehist
+> H
+Error: object 'H' not found
+> attach(baseball)
+> H
+  [1] 153 111 115 128 169 170  86  38  61  64  38  45   5   6 141 130 108 141
+ [19]  81  35 134 149  48  13 174 150  71 146  84  96 108  70 141  62  84  79
+ [37]  96  20  56 137 158  73  86  36  82  45  32  36  92  45  81 149 130 133
+ [55]  97  65 164  62  47  51  26  20 113  36   6 116  82  88 157 100  58 121
+ [73]  47 173 158 142  58  45 187 119 141  67  97  98  91 109  88  30  99  23
+ [91]  68 140 101 136 175 119  36  65  72 152  58  18 145 161 170 121  72  31
+[109] 163 120  61  18 134  67 182  91  86 123  60  38  56  15   3  22 147 155
+[127] 158 162 102  94  34  74  84   2   7  14  25  26 170 155 158 129  51  29
+[145] 104  92  40  13  55  31   3   3  40 210 135 127 158  62  74  42  59  83
+[163]  91  59  58 163 120 105 181 107 119 116 175 107  38  30 141  57  16 111
+[181]  69  94  40 171  99  57  28  73 130  70  83 163 132  93 131  60 160 114
+[199]  46  66 144 122  46  37  61 216 131 146  77 149 117 132 125  51  62 106
+[217]   4 153 169 122  64 130 119 140  45 106 110  72  76   8 174 108 188 181
+[235] 149  72  71 104  40  60  85 116  44 144  85 179  65  94  23  12  14  17
+[253] 159 198 163 106 143 111 172  41 178 161  55  19  63  61   5   8 166 135
+[271] 129 113 132  57  74  77  35  36  51 164  80  58  51 161 131 195 148 137
+[289] 108 102 137  73  50 159  57  39 203 126  97 158 125 144   1  70  30  53
+[307]  51  46  56  16  95 139 160  63 179  99  54 167  98  44  23  87 152 203
+[325] 201 113  54 136 144 106  28  57   3  48  50  74   8
+> hist(H)
+> truehist(H)
+> hist(H)
+> truehist(H)
+> plot(H,R)
+> plot (H,Sal)
+> plot(R,Sal)
+> plot(E,K)
+> plot(H,R)
+> plot(H,R,col=FreeEl)
+> plot(H,R,col=FreeEl+3)
+> plot(H,R,col=FreeEl+3, pch=FreeEl+16)
+> plot(H,R,col=FreeEl+3, pch=FreeEl+16, xlab="Hits", ylab = "Runs, main="Runs vs. Hits with Free Agency Eligibility")
+Error: unexpected symbol in "plot(H,R,col=FreeEl+3, pch=FreeEl+16, xlab="Hits", ylab = "Runs, main="Runs"
+> plot(H,R,col=FreeEl+3, pch=FreeEl+16, 
++       xlab="Hits", ylab = "Runs", 
++       main="Runs vs. Hits with Free Agency Eligibility")
+> plot(baseball[,4:8])
+> 
+> trees
+   Girth Height Volume
+1    8.3     70   10.3
+2    8.6     65   10.3
+3    8.8     63   10.2
+4   10.5     72   16.4
+5   10.7     81   18.8
+6   10.8     83   19.7
+7   11.0     66   15.6
+8   11.0     75   18.2
+9   11.1     80   22.6
+10  11.2     75   19.9
+11  11.3     79   24.2
+12  11.4     76   21.0
+13  11.4     76   21.4
+14  11.7     69   21.3
+15  12.0     75   19.1
+16  12.9     74   22.2
+17  12.9     85   33.8
+18  13.3     86   27.4
+19  13.7     71   25.7
+20  13.8     64   24.9
+21  14.0     78   34.5
+22  14.2     80   31.7
+23  14.5     74   36.3
+24  16.0     72   38.3
+25  16.3     77   42.6
+26  17.3     81   55.4
+27  17.5     82   55.7
+28  17.9     80   58.3
+29  18.0     80   51.5
+30  18.0     80   51.0
+31  20.6     87   77.0
+> attach(trees)
+> plot(Girth,Volume)
+> vg.lm<-lm(Volume-Girth)
+Error in formula.default(object, env = baseenv()) : invalid formula
+> vg.lm<-lm(Volume-Girth)
+Error in formula.default(object, env = baseenv()) : invalid formula
+> summary(vg.lm)
+Error in summary(vg.lm) : object 'vg.lm' not found
+> vg.lm<-lm(Volume-Girth)
+Error in formula.default(object, env = baseenv()) : invalid formula
+>      summary(vg.lm)
+Error in summary(vg.lm) : object 'vg.lm' not found
+> vg.lm<-lm(Volume~Girth)
+>      summary(vg.lm)
+
+Call:
+lm(formula = Volume ~ Girth)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-8.065 -3.107  0.152  3.495  9.587 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -36.9435     3.3651  -10.98 7.62e-12 ***
+Girth         5.0659     0.2474   20.48  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.252 on 29 degrees of freedom
+Multiple R-squared:  0.9353,	Adjusted R-squared:  0.9331 
+F-statistic: 419.4 on 1 and 29 DF,  p-value: < 2.2e-16
+
+> abline(-36.9435,5.0659)
+> plot(Girth,Volume)
+> abline(vg.lm)
+> fits<--36.9435+5.0659*Girth
+> plot(Girth,Volume)
+> points(Girth, fits, pch=19, col=2)
+> errors.mean<-(Volume-mean(Volume))
+> length(errors.mean)
+[1] 31
+> plot(rep(0,31), errors.mean)
+> errors.line<-Volume-fits
+> points(rep(.5,31),errors.line)
+> sum(errors.mean)
+[1] -4.085621e-14
+> sum(errors.line)
+[1] -0.01663
+> e2.mean<-errors.mean^2
+> e2.line<-errors.line^2
+> e2.mean
+ [1]  394.855359  394.855359  398.839553  189.639553  129.298907  109.641165
+ [7]  212.313101  143.304069   57.319553  105.492778   35.652456   84.106649
+[13]   76.929875   78.694069  122.566327   63.536327   13.169875    7.678262
+[19]   19.989553   27.783101   18.740520    2.337940   37.565036   66.081165
+[25]  154.480843  636.504069  651.731488  791.242456  454.927617  433.848585
+[31] 2192.958262
+> e2.line
+ [1] 27.00392404 13.51856410  6.57194242  0.02296740  2.36658226  3.73177397
+ [7] 10.12130596  0.33802596 10.96941024  0.01111338 15.20087537  0.03695622
+[13]  0.35074822  1.05581790 22.53685729 38.52200769 29.08865569  9.19890702
+[19] 45.68854205 65.05906545  0.27133681 10.83910760  0.04496520 33.76655881
+[25]  9.18496065 22.12225376 15.92209506 20.82909193  7.52240329 10.51510329
+[31] 91.89062912
+> sum(e2.line)/sum(e2.mean)
+[1] 0.06468013
+> R2<-1-sum(e2.line)/sum(e2.mean)
+> R2
+[1] 0.9353199
+> summary(vg.lm)
+
+Call:
+lm(formula = Volume ~ Girth)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-8.065 -3.107  0.152  3.495  9.587 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -36.9435     3.3651  -10.98 7.62e-12 ***
+Girth         5.0659     0.2474   20.48  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.252 on 29 degrees of freedom
+Multiple R-squared:  0.9353,	Adjusted R-squared:  0.9331 
+F-statistic: 419.4 on 1 and 29 DF,  p-value: < 2.2e-16
+
+> vh.lm<-(Volume~Height)
+> summary(vh.lm)
+ Length   Class    Mode 
+      3 formula    call 
+> vgh.lm<lm(Volume~Girth+Height)
+Error: object 'vgh.lm' not found
+> summary(vh.lm)
+ Length   Class    Mode 
+      3 formula    call 
+> summary(vh.lm)
+ Length   Class    Mode 
+      3 formula    call 
+> vgh.lm<lm(Volume~Girth+Height)
+Error: object 'vgh.lm' not found
+> summary(vgh.lm)
+Error in summary(vgh.lm) : object 'vgh.lm' not found
+> vgh.lm<-lm( Volume ~ Girth + Height )
+> summary ( vgh.lm )
+
+Call:
+lm(formula = Volume ~ Girth + Height)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-6.4065 -2.6493 -0.2876  2.2003  8.4847 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -57.9877     8.6382  -6.713 2.75e-07 ***
+Girth         4.7082     0.2643  17.816  < 2e-16 ***
+Height        0.3393     0.1302   2.607   0.0145 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 3.882 on 28 degrees of freedom
+Multiple R-squared:  0.948,	Adjusted R-squared:  0.9442 
+F-statistic:   255 on 2 and 28 DF,  p-value: < 2.2e-16
+
+> vh.lm<- lm( Volume ~ Height )
+> summary( vh.lm )
+
+Call:
+lm(formula = Volume ~ Height)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-21.274  -9.894  -2.894  12.068  29.852 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -87.1236    29.2731  -2.976 0.005835 ** 
+Height        1.5433     0.3839   4.021 0.000378 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 13.4 on 29 degrees of freedom
+Multiple R-squared:  0.3579,	Adjusted R-squared:  0.3358 
+F-statistic: 16.16 on 1 and 29 DF,  p-value: 0.0003784
+
+> 
