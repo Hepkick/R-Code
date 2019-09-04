@@ -1,0 +1,94 @@
+
+R version 3.6.1 (2019-07-05) -- "Action of the Toes"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.70 (7684) x86_64-apple-darwin15.6.0]
+
+[Workspace restored from /Users/Jen 1/.RData]
+[History restored from /Users/Jen 1/.Rapp.history]
+
+> D<-1000; K<-5; h<-0.25
+> d
+Error: object 'd' not found
+> D
+[1] 1000
+> K
+[1] 5
+> h
+[1] 0.25
+> Q<-√2DK/h
+Error: unexpected input in "Q<-‚"
+> Q=√2DK/h
+Error: unexpected input in "Q=‚"
+> Ans<-√2DK/h
+Error: unexpected input in "Ans<-‚"
+> √2DK/h
+Error: unexpected input in "‚"
+> √10
+Error: unexpected input in "‚"
+> √10
+Error: unexpected input in "‚"
+> 2DK/h
+Error: unexpected symbol in "2DK"
+> 2*DK/h
+Error: object 'DK' not found
+> d
+Error: object 'd' not found
+> D
+[1] 1000
+> K
+[1] 5
+> 2*D*K/h
+[1] 40000
+> x<-2*D*K/h
+> swrt(x)
+Error in swrt(x) : could not find function "swrt"
+> √x
+Error: unexpected input in "‚"
+> ?sqrt
+starting httpd help server ... done
+> x
+[1] 40000
+> sqrt(4000)
+[1] 63.24555
+> P<-100; r<-0.08; n<-12; t<-3
+> R
+Error: object 'R' not found
+> P
+[1] 100
+> r
+[1] 0.08
+> n
+[1] 12
+> t
+[1] 3
+> P(1+r/n)^n*t
+Error in P(1 + r/n) : could not find function "P"
+> ANS<-P(1+r/n)^n*t
+Error in P(1 + r/n) : could not find function "P"
+> F<-P(1+r/n)^n*t
+Error in P(1 + r/n) : could not find function "P"
+> Answ<- sqrt(2*D*K/h)
+> Answ
+[1] 200
+> nt<-n*t
+> F<-P*(1+r/n)^nt
+> F
+[1] 127.0237
+2019-09-01 22:58:58.875 R[57128:2157815] IMKClient Stall detected, *please Report* your user scenario attaching a spindump (or sysdiagnose) that captures the problem - (imkxpc_bundleIdentifierWithReply:) block performed very slowly (1.43 secs).
+> 
